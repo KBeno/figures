@@ -352,10 +352,22 @@
 
 
 						<!-- CONTENT: 4 Arrows -->
+						<style>
+							.stream {
+								stroke-dasharray: 20;
+								animation: dashmove 5s linear infinite reverse;
+							}
+
+							@keyframes dashmove {
+								to {
+									stroke-dashoffset: 500;
+								}
+							}
+						</style>
 						<g stroke-linecap="round">
 								<g
 									transform="translate(598.1279744674907 199.98141842384325) rotate(0 -166.49601388717394 69.88624391307837)">
-									<path
+									<path class="stream"
 											d="M-0.81 -0.63 C-56.37 22.71, -277.51 115.94, -332.77 139.46 M0.97 1.66 C-54.79 25.22, -277.97 118.02, -333.6 140.83"
 											stroke="#1e1e1e" stroke-width="1" fill="none"></path>
 								</g>
@@ -877,6 +889,9 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+
+				width: 1920,
+				height: 1080,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
