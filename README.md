@@ -61,3 +61,17 @@ And some discussions on [GitHub](https://github.com/hakimel/reveal.js/issues/125
                     height: 1080,
     });
     ```
+## Extra
+
+For faster edits I recommend to run a local development webserver
+that auto-detects the changes in the SVG and render it immediately in the browser.
+A quick and lightweight option is [Live Server](https://github.com/tapio/live-server).
+Refer to documentation to install it, and run it within the root folder of your repository with:
+
+```sh
+live-server
+```
+
+# License notice
+
+Uses MIT licensed code from [reveal.js](https://github.com/hakimel/reveal.js)
