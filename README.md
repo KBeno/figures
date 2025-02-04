@@ -54,6 +54,33 @@ And some discussions on [GitHub](https://github.com/hakimel/reveal.js/issues/125
     `<data-id="whatever_unique_name_to_match">` [attribute](https://revealjs.com/auto-animate/#how-elements-are-matched)
     3. To make any other element untouched, use the `data-auto-animate-unmatched="false"` attribute
 
+6. You can use css attributes to animate elements of the svg
+    1. Create the style element in the html (or add it to your css) (`.stream` in below example)
+    ```html
+    <style>
+        .stream {
+            stroke-dasharray: 20;
+            animation: dashmove 5s linear infinite reverse;
+        }
+
+        @keyframes dashmove {
+            to {
+                stroke-dashoffset: 500;
+            }
+        }
+    </style>
+    ```
+    2. Add the class definition to the element you'd like to animate (`class="stream"` in below example)
+    ```xml
+    <g
+        transform="translate(50, 100) rotate(0 10 20)">
+        <path class="stream"
+                d="M0 0 C56 22, -280 115, -330 140 M0 2 C-55 25, -280 118, -333 140"
+                stroke="#1e1e1e" stroke-width="1" fill="none">
+        </path>
+    </g>
+    ```
+
 6. Add your desired presentation width and height to the reveal initialize script in the end of the html
     ```js
     Reveal.initialize({
